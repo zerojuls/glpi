@@ -69,7 +69,7 @@ class Item_OperatingSystem extends DbTestCase {
    public function testAttachComputer() {
       $computer = getItemByTypeName('Computer', '_test_pc01');
 
-      $objects = $this->createDdObjects();;
+      $objects = $this->createDdObjects();
       $ios = new \Item_OperatingSystem();
       $input = [
          'itemtype'                          => $computer->getType(),
@@ -105,7 +105,7 @@ class Item_OperatingSystem extends DbTestCase {
          (int)\Item_OperatingSystem::countForItem($computer)
       )->isIdenticalTo(1);
 
-      $objects = $this->createDdObjects();;
+      $objects = $this->createDdObjects();
       $ios = new \Item_OperatingSystem();
       $input = [
          'itemtype'                          => $computer->getType(),
@@ -141,7 +141,7 @@ class Item_OperatingSystem extends DbTestCase {
          )->contains('operatingsystems_id');
       }
 
-      $objects = $this->createDdObjects();;
+      $objects = $this->createDdObjects();
       $ios = new \Item_OperatingSystem();
       $input = [
          'itemtype'                          => $computer->getType(),
@@ -166,7 +166,7 @@ class Item_OperatingSystem extends DbTestCase {
          )->contains('operatingsystems_id');
       }
 
-      $objects = $this->createDdObjects();;
+      $objects = $this->createDdObjects();
       $ios = new \Item_OperatingSystem();
       $input = [
          'itemtype'                          => $computer->getType(),

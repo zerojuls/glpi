@@ -323,6 +323,9 @@ function update92to921() {
    //add MSIN to simcard component
    $migration->addField('glpi_items_devicesimcards', 'msin', 'string', ['after' => 'puk2', 'value' => '']);
 
+   $migration->addField('glpi_items_operatingsystems', 'is_recursive', "tinyint(1) NOT NULL DEFAULT '0'",
+                        ['after' => 'entities_id']);
+
    // ************ Keep it at the end **************
    $migration->executeMigration();
 
