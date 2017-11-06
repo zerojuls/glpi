@@ -675,4 +675,12 @@ class Item_OperatingSystem extends CommonDBRelation {
       }
       parent::processMassiveActionsForOneItemtype($ma, $item, $ids);
    }
+
+   public function prepareInputForAdd($input) {
+      $item = getItemForItemtype($this->fields['itemtype']);
+      $item->getFromDB($this->fields['items_id']);
+      $input['entities_id'] = $item->getField('entities_id');
+      $input['is_recursive'] = $item->getField('is_recursive');
+      return $input;
+   }
 }
